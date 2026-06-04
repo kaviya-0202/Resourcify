@@ -1,0 +1,39 @@
+.who-container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(120deg, #667eea, #764ba2);
+  color: white;
+}
+
+.who-container h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+.who-container p {
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+.role-box {
+  display: flex;
+  gap: 20px;
+}
+
+.role-box button {
+  padding: 15px 30px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  background: white;
+  color: #333;
+  transition: 0.3s;
+}
+
+.role-box button:hover {
+  transform: translateY(-3px);
+  background: #eaeaea;
+}
