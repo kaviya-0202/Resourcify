@@ -4,10 +4,11 @@ import api from "../services/api";
 import "../styles/auth.css";
 
 const DEPARTMENTS = ["CSE", "IT", "ECE", "EEE", "MECH", "CIVIL", "AIDS", "Other"];
-const YEARS = ["1st Year", "2nd Year", "3rd Year", "4th Year", "PG", "Faculty"];
+const STUDENT_YEARS = ["1st Year", "2nd Year", "3rd Year", "4th Year", "PG"];
+const STAFF_DESIGNATIONS = ["Assistant Professor", "Associate Professor", "Professor", "HOD", "Lab Instructor"];
 
 const Register = () => {
-  const { role } = useParams(); // "student" or "staff"
+  const { role } = useParams();
   const navigate = useNavigate();
   const [form, setForm] = useState({
     name: "", email: "", phone: "", college: "",
@@ -80,7 +81,9 @@ const Register = () => {
               <label>{isStaff ? "Designation" : "Year"}</label>
               <select name="year" value={form.year} onChange={handleChange} required>
                 <option value="">Select</option>
-                {YEARS.map(y => <option key={y} value={y}>{y}</option>)}
+                {(isStaff ? STAFF_DESIGNATIONS : STUDENT_YEARS).map(y => (
+                  <option key={y} value={y}>{y}</option>
+                ))}
               </select>
             </div>
           </div>
