@@ -89,7 +89,7 @@ const ResourceCard = ({ resource }) => {
   const handleDownload = async () => {
     try {
       const token = localStorage.getItem("token");
-      const res = await fetch(`http://localhost:5000/api/resource/download/${resource._id}`, {
+      const res = await fetch(`https://resourcify-production.up.railway.app/api/resource/download/${resource._id}`,  {
         headers: { Authorization: `Bearer ${token}` },
       });
       const blob = await res.blob();
